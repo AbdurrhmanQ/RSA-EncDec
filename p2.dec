@@ -1,0 +1,37 @@
+d = 4649 n = 9179
+Breaking RSA Encryption _ an Update on the State_of_the_Art
+June 13, 2019 Andreas Baumhof Encryption, Industry Updates, Quantum Insights
+
+You've heard me rambling about Quantum Computers and the impact they will have on cryptography. Probably the biggest and most well_known impact is that they will be able to use Shor's quantum algorithm to crack all RSA_ECC cryptography. Fortunately, Quantum Computers powerful enough to do this are not yet in sight, although that does not mean that we can relax...
+
+Classical computers can do this too _ it takes just a looooooooong time
+
+Actually, you don't need a quantum computer at all to crack RSA_ECC, if you have a lot of time that is. You can use a  "normal" (read classical) computer as well. It is just unbelievably hard for this normal computer to solve this. It would take a classical computer around 300 trillion years to break a RSA_2048 bit encryption key. That's why we all feel that we are  "safe" from these attacks. But it does illustrate that the foundation of all of our cryptography is not guaranteed to be secure, it is only known to be really, really hard to solve (like trillion of years hard). That's what we call  "computational security".
+
+A perfect Quantum Computer could do this in 10 seconds
+
+Now the trick with Shor's algorithm is that he found a way to massively reduce the complexity of breaking RSA_ECC using a quantum computer. The problem that otherwise has exponential complexity (meaning if N is the number of bits, the N is in the exponent e.g. 5 to the power N) gets reduced to polynomial complexity (meaning the N is in the base, e.g. only N to the power 5). And that makes a massive difference. A quantum computer with 4099 perfectly stable qubits could break the RSA_2048 encryption in 10 seconds (instead of 300 trillion years _ wow).
+
+The problem is that such a quantum computer doesn't exist (yet).
+
+We have neither the number of qubits needed (4099), nor the quality of qubits (perfectly stable). The biggest quantum computer has currently 72 qubits (Google Bristlecone), however it has an error rate of 0.6 percent. The hardest problem though is coherence time. The coherence time is a measure of how fast the qubits lose their special quantum properties, so any calculation needs to finish within the coherence time. The coherence time at the moment is typically between 50_90 microseconds, so you can forget about any calculation that takes a while!
+
+All of these issues obviously preclude anyone from running Shor's algorithm on a Quantum Computer, and it is unclear when a powerful enough quantum computer will be available (maybe 5 years, maybe 10 years, maybe 20 years), so we can relax right?
+
+Well, the problem is that innovation always comes in waves and sometimes breakthroughs are exactly that: they break through the established prediction. With the massive amount of research going into this field, it is hard to keep track of all the efforts.
+
+So where are we really?
+
+The most complete effort to highlight what's possible has been published by Craig Gidney from Google and Martin Ekera from the Royal Institute of Technology in Stockholm. Just last month, they published a paper called  "How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits ".
+
+The most interesting part of this paper is that they derived a complete system taking the noisy_imperfect qubits into account with a gate error rate of 0.1 percent. IBM's Q System One has a one_qubit gate error rate of 0.04 percent and an average two_qubit gate error rate of 1.6 percent, so we are not far off even with the current  "noisy" quantum computers.
+
+Now 20 million qubits is still a lot of qubits, but for the very first time we have an algorithm that is not just theoretical in nature ("If I assume a perfect quantum computer exists, then I can solve this "), but very practical (i.e.  "we worked around the current limitations and with modest improvements on current architectures we can solve this "). This is a massive shift and I'm sure the 20 million qubits can be reduced quite a bit as well if the gate error rate is reduced and through other optimization.
+
+The same result was determined to be achievable back in 2012 with 1 billion qubits (Fowler et al), then with 230m qubits in 2017 (O'Gorman et al), 170m qubits in 2019 with (Gheorghiu et al), taking us to the with 20m qubits in 2019 with the analysis described above (Gidney, Ekera). So we went from 1 billion qubits to 20m qubits in the space of 7 years. That's what I mean when I talked about breakthroughs and massive research going into this field.
+
+Now that's all well and good, but even this research is "theoretical" since the authors obviously couldn't run their algorithm on real quantum computing hardware (as this doesn't exist yet).
+
+So what can currently available hardware do?
+
+Let's first look at what's possible on current classical computers. In 2010, researchers successfully factored a 768_bit integer (basically breaking RSA_768). That's a number with 232 digits! They had to use many hundreds of machines over a timeframe of 2 years (!) It'll be tough to compare this to a single quantum computer, but here we go..
